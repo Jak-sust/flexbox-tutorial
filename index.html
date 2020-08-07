@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Tutorial</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            display: flex;  /*blok element*/
+            /*display: inline-flex;   /*Non blok element*/
+            border: .6rem solid black;
+            /*flex-direction: row;  default*/
+            /* flex-direction: row-reverse; */ /*Reverse element acrose main axis*/
+            /* flex-direction: column; */ /*organize element vertically*/
+            /* flex-direction: column-reverse; */ /*Reverse element vertically*/
+            /* flex-wrap: wrap; */
+            /*flex-wrap: nowrap*/ /*default*/
+            /* flex-wrap:wrap-reverse; */ /*Wrap element in reversely*/
+            /* flex-flow: row wrap; */ /*Short hand of flex-direction and flex-wrap*/
+            /* justify-content: flex-start; */ /*default value and it aligns content left lise on main axis*/
+            /*justify-content: flex-end;*/ /*It aligns contents on right side on main axis  https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+            /*justify-content: space-between; */ /*all spaces among the elements without start and end*/
+            /*justify-content: space-around;*/  /*all spaces among the elements with half space on start and end */
+            /*justify-content: space-evenly;*/  /*all spaces among the elements equally including start and end*/
+            /*justify-content: center;*/ /*align elements center on main axis*/
+            height: 40rem;
+            /*align-items: stretch; */ /*defalut for align-items*/
+            /*align-items: flex-start;*/ /*aligns all elements on top with element content size*/
+            /*align-items: flex-end;*/ /*aligns all elements on bottom with element content size*/
+            /*align-items: center;*/ /*aligns all elements on center with elemnt size*/
+            /*align-items: baseline;*/ /*aligns all elements on a single line accroding to content*/
+
+            /*align-content: stretch; */ /*(default value stretch) applied for multilines content for container where container needs height and wrap. 0 effect if content is single line. Its actually mixed of justify-content and align-items.*/
+            /*align-content: flex-start;*/  /*align multilines element on top */
+            /*align-content: flex-end;*/  /*align multilines element on bottom */
+            /*align-content: center;*/  /*align multilines element on center */
+            /*align-content: space-around;*/  /*align multilines element on cross axis with half space for start and end */
+            /*align-content: space-between; */  /*align multilines element on cross axis without space for start and end*/
+            /*align-content: space-evenly;*/  /*align multilines element on cross axis equally with start and end*/
+        }
+        .flex_item{
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            /*width: 300px;*/ /* if I set width on percent then inline-flex does not work*/
+            flex-basis: 25rem;
+            /*flex-grow: 1;*/ /*equally distribute remaining space among elements*/
+            /*flex-shrink: 0; */ /*other side of flex-grow, default value is 1, if 0 no shirnk*/
+        }
+        .item_1{
+            background-color:teal;
+            /* padding-bottom: 1.2rem; */ /*for testing baseline*/
+            /*order: 1; */ /*It will be on position 3 as the default value is 0. so element will be 0 0 1 (conetent number start at 2 3 1)*/
+            /*align-self: flex-start;*/ /*align itset in start of cross axis*/
+        }
+        .item_2{
+            background-color: tomato;
+            /* font-size: 2rem; */ /*for testing baseline*/
+            /*flex-grow: 1;*/ /*flex-grow of which default value is 0, can have value 1 . if one it will take all remaining sapace. but it other element has flex grow , then remaing space will be divided according to flex-grow values proportionaly*/
+        }
+        .item_3{
+            background-color: yellowgreen;
+            /* padding-top: 2rem; */ /*for testing baseline*/
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */ /*this content will be shrink twice then other element*/
+            /*flex: 2 3 25rem;*/ /*flex shorthand of flex-grow, flex-shrink and flex-basis, default value is 0 1 auto.*/
+            /*flex: 2 50%; */ /* flex-grow | flex-basis */
+            /*flex: 2 2; */ /* flex-grow | flex-shirnk */
+            /*flex: 25rem; */ /* flex-basis */
+            /*flex: 2; */ /* flex-grow*/
+            /*align-self: flex-start; */ /*align itset in start of cross axis*/
+            /*align-self: flex-end;*/ /*align itset in end of cross axis*/
+            /*align-self: center;*/ /*align itset in center of cros axis*/
+            /*align-self: auto; */ /*align itset in cross axis according to parent align-items*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex_item item_1">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus eveniet harum commodi amet</div>
+        <div class="flex_item item_2">2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque impedit doloribus sapiente officia porro qui aliquam, recusandae ut commodi quae eaque vel</div>
+        <div class="flex_item item_3">3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, excepturi.</div>
+    </div>
+</body>
+</html>
+
+
+
